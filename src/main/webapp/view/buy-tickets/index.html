@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="js/index.js"></script>
+    <title>Hello, world!</title>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="alert alert-warning" role="alert" style="width: 100%">
+            <div><h4>Search Box</h4></div>
+            <form class="form-inline">
+                <div class="form-group  mx-sm-5 mb-0">
+                    <label>
+                        <select class="form-control">
+                            <option value="" disabled selected>Origin</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group mx-sm-5 mb-0">
+                    <label>
+                        <select class="form-control">
+                            <option value="" disabled selected>Destination</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-group mx-sm-5 mb-0">
+                    <label>
+                        <select class="form-control">
+                            <option value="" disabled selected>Date of Departure</option>
+                        </select>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary w-25 mx-sm-5 mb-0 " onclick="loadStudentsAjax()">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col">
+            <div class="table-responsive" style="margin-top: 30px">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Route : </th>
+                        <th scope="col"></th>
+                        <th scope="col">Date of Departure : </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Travel ID</th>
+                        <th scope="col">Departure Time</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../resources/js/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="../../resources/js/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="../../resources/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

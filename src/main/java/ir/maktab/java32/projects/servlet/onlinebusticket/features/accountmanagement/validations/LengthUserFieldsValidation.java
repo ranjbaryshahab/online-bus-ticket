@@ -12,6 +12,5 @@ public class LengthUserFieldsValidation {
         new StringLengthValidation().validate(user.getFirstName(), LengthFieldValue.FIRST_NAME.getLength(), ExceptionMessage.FIRST_NAME_LARGER.getMessage());
         new StringLengthValidation().validate(user.getLastName(), LengthFieldValue.LAST_NAME.getLength(), ExceptionMessage.LAST_NAME_LARGER.getMessage());
         new StringLengthValidation().validate(user.getUsername(), LengthFieldValue.USERNAME.getLength(), ExceptionMessage.USERNAME_LARGER.getMessage());
-        new StringLengthValidation().validate(user.getEmail(), LengthFieldValue.EMAIL.getLength(), ExceptionMessage.EMAIL_LARGER.getMessage());
     }
 }
