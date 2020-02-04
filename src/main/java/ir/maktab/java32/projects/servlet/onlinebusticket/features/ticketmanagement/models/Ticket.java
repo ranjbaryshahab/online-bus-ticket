@@ -1,13 +1,10 @@
 package ir.maktab.java32.projects.servlet.onlinebusticket.features.ticketmanagement.models;
 
-import ir.maktab.java32.projects.servlet.onlinebusticket.features.accountmanagement.models.User;
-import ir.maktab.java32.projects.servlet.onlinebusticket.features.shared.enumeration.Gender;
 import ir.maktab.java32.projects.servlet.onlinebusticket.features.shared.model.PersistenceEntity;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import java.util.Date;
+import javax.persistence.*;
+import java.util.*;
 
 @Setter
 @Getter
@@ -18,20 +15,23 @@ import java.util.Date;
 @Entity
 public class Ticket extends PersistenceEntity<Long> {
 
-    private String customerName;
-
-    private Gender gender;
-
+    @Column(name = "ORIGIN")
     private String origin;
 
+    @Column(name = "DESTINATION")
     private String destination;
 
-    private Date dateOfDeparture;
+    @Column(name = "DEPARTURE_DATE")
+    @Temporal(TemporalType.DATE)
+    private Date departureDate;
 
+    @Column(name = "DEPARTURE_TIME")
+    @Temporal(TemporalType.TIME)
     private Date departureTime;
 
+    @Column(name = "TRAVEL_ID")
     private String travelId;
 
-    @ManyToOne
-    private User user;
+    @ManyToMany
+    private Set<Customer> customerSet = new HashSet<>();
 }

@@ -31,7 +31,5 @@ public class CreateAccountByUserController extends HttpServlet {
                 resp.sendRedirect("../login/login.jsp");
             }
         }
-
-
     }
 }

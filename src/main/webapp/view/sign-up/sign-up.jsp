@@ -52,7 +52,7 @@
                             <button class="btn btn-info btn-block" type="submit">Sign up</button>
                         </form>
                     </div>
-                    <h6 class="text-center"><a href="../login/login.jsp">Login</a></h6>
+                    <h6 class="text-center"><a href="/online_bus_ticket_war/view/login/login.jsp">Login</a></h6>
                 </div>
             </div>
         </div>

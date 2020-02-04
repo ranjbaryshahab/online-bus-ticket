@@ -11,7 +11,7 @@
 
   <error-page>
     <error-code>403</error-code>
-    <location>/view/notfound/notfound.jsp</location>
+    <location>/view/forbidden/forbidden.jsp</location>
   </error-page>
 
 </web-app>

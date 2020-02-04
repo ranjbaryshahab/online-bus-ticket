@@ -33,7 +33,7 @@ public class LoginToAccountByUserController extends HttpServlet {
             AuthenticationService.getInstance().setLoginUser(loginUser);
             HttpSession session = request.getSession(true);
             session.setAttribute("user_data", loginUser);
-            response.sendRedirect("../buy-tickets/index.html");
+            response.sendRedirect("/online_bus_ticket_war/view/secured/buy-tickets/index.jsp");
         }
 
     }

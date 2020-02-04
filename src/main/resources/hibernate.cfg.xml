@@ -14,5 +14,7 @@
 
         <!-- Mapping -->
         <mapping class="ir.maktab.java32.projects.servlet.onlinebusticket.features.accountmanagement.models.User"/>
+        <mapping class="ir.maktab.java32.projects.servlet.onlinebusticket.features.ticketmanagement.models.Ticket"/>
+        <mapping class="ir.maktab.java32.projects.servlet.onlinebusticket.features.ticketmanagement.models.Customer"/>
     </session-factory>
 </hibernate-configuration>

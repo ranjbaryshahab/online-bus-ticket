@@ -40,7 +40,7 @@
 
                         </form>
                     </div>
-                    <h6 class="text-center"><a href="../sign-up/sign-up.jsp">sign up</a></h6>
+                    <h6 class="text-center"><a href="/online_bus_ticket_war/view/sign-up/sign-up.jsp">sign up</a></h6>
                 </div>
             </div>
         </div>

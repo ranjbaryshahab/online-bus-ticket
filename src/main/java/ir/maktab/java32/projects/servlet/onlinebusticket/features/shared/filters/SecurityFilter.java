@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "SecurityFilter", urlPatterns = {"/secured/*"})
+@WebFilter(filterName = "SecurityFilter", urlPatterns = {"/view/secured/*"})
 public class SecurityFilter implements Filter {
     public void destroy() {
     }
@@ -17,7 +17,7 @@ public class SecurityFilter implements Filter {
         if (request.getSession() != null && request.getSession().getAttribute("user_data") != null) {
             chain.doFilter(req, resp);
         } else {
-            response.sendRedirect("view/login/login.html");
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
         }
 
     }
