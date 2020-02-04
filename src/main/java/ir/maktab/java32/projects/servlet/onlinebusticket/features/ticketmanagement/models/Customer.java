@@ -6,6 +6,8 @@ import ir.maktab.java32.projects.servlet.onlinebusticket.features.shared.model.P
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Setter
@@ -26,4 +28,7 @@ public class Customer extends PersistenceEntity<Long> {
 
     @ManyToOne
     private User user;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Ticket> ticketList = new ArrayList<>();
 }

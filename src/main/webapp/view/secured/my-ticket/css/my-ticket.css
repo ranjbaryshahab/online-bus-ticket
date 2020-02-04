@@ -1,0 +1,8 @@
+body, html {
+    background-image: url("../img/my-ticket.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}

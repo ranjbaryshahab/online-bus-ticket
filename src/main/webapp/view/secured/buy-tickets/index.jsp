@@ -22,13 +22,29 @@
 <body>
 <% if (request.getSession().getAttribute("user_data") != null) {%>
 <% if (request.getAttribute("purchase") != null) { %>
-
 <div class="alert alert-success alert-dismissible">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Success!</strong> <%=request.getAttribute("pre") + " " + request.getAttribute("customerName") + " Your ticket purchase was successful !" + "        Ticket Id: " + request.getAttribute("ticketId") %>
+    <strong>Success!</strong> <%=request.getAttribute("pre") + " " + request.getAttribute("customerName") + " your ticket purchase was successful !" + "        Ticket Id: " + request.getAttribute("ticketId") %>
 </div>
 <% } %>
 <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Online Bus Ticket</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">Search<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../my-ticket/my-ticket.jsp">My Ticket</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="row mt-5">
         <div class="alert alert-warning" role="alert" style="width: 100%">
             <div><h4>Search Box</h4></div>
@@ -63,10 +79,14 @@
                     <thead>
                     <tr>
                         <th scope="col">Route
-                            : <%=request.getParameter("origin") + " - " + request.getParameter("destination")%>
+                            : <% if (request.getParameter("origin") != null) { %>
+                            <%=request.getParameter("origin") + " - " + request.getParameter("destination")%>
+                            <%}%>
                         </th>
                         <th scope="col"></th>
-                        <th scope="col">Departure Date : <%=request.getParameter("departure-date")%>
+                        <th scope="col">Departure Date : <% if (request.getParameter("departure-date") != null) { %>
+                            <%=request.getParameter("departure-date")%>
+                            <%}%>
                         </th>
                     </tr>
                     <tr>

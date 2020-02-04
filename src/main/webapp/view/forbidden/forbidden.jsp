@@ -8,12 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Forbidden</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <style><%@ include file="css/forbidden.css"%></style>
-    <style><%@ include file="css/font.css"%></style>
-    <script><%@ include file="js/icon.js"%></script>
+    <style>
+        <%@ include file="css/forbidden.css" %>
+    </style>
+    <style>
+        <%@ include file="css/font.css" %>
+    </style>
+    <script>
+        <%@ include file="js/icon.js" %>
+    </script>
 
     <title>403 Access Denied</title>
 

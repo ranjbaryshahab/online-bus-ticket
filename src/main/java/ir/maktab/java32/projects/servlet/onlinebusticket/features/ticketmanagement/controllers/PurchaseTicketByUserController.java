@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Set;
+import java.util.List;
 
 @WebServlet(name = "purchaseTicket", urlPatterns = "/view/secured/buy-tickets/purchaseTicket")
 public class PurchaseTicketByUserController extends HttpServlet {
@@ -34,13 +34,23 @@ public class PurchaseTicketByUserController extends HttpServlet {
             }
             customer.setCustomerName(customerName);
             customer.setUser(AuthenticationService.getInstance().getLoginUser());
-            Customer newCustomer = new PurchaseTicketByUserUseCaseImpl().purchase(customer);
             Ticket ticket = TicketRepository.getInstance().findById(Long.parseLong(ticketId));
 
-            if (ticket.getCustomerSet().isEmpty())
-                ticket.setCustomerSet(Set.of(newCustomer));
-            else
-                ticket.getCustomerSet().add(newCustomer);
+            if (customer.getTicketList().isEmpty()) {
+                customer.setTicketList(List.of(ticket));
+            } else {
+                customer.getTicketList().add(ticket);
+            }
+
+
+            Customer newCustomer = new PurchaseTicketByUserUseCaseImpl().purchase(customer);
+
+
+            if (ticket.getCustomerList().isEmpty()) {
+                ticket.setCustomerList(List.of(newCustomer));
+            } else {
+                ticket.getCustomerList().add(newCustomer);
+            }
 
             TicketRepository.getInstance().update(ticket);
             req.setAttribute("pre", pre);
