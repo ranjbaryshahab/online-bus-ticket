@@ -17,10 +17,17 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Search Ticket</title>
-
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-<% if (request.getSession().getAttribute("user_data") != null) { %>
+<% if (request.getSession().getAttribute("user_data") != null) {%>
+<% if (request.getAttribute("purchase") != null) { %>
+
+<div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> <%=request.getAttribute("pre") + " " + request.getAttribute("customerName") + " Your ticket purchase was successful !" + "        Ticket Id: " + request.getAttribute("ticketId") %>
+</div>
+<% } %>
 <div class="container">
     <div class="row mt-5">
         <div class="alert alert-warning" role="alert" style="width: 100%">
@@ -82,8 +89,11 @@
                         </td>
                         <td><%=ticketList.get(i).getDepartureTime().getHours() + ":" + ticketList.get(i).getDepartureTime().getMinutes()%>
                         </td>
+
                         <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#buy">
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#buy"
+                                    onclick="setId(<%=ticketList.get(i).getId()%>)">
                                 Buy
                             </button>
 
@@ -92,19 +102,43 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="buyTitle">Modal title</h5>
+                                            <h5 class="modal-title" id="buyTitle" style="color: black">Customer
+                                                Info</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
+                                            <div class="form-group">
+                                                <form class="text-center" action="purchaseTicket" method="get">
+                                                    <label for="customerName"></label>
+                                                    <input type="text" id="customerName" name="customerName"
+                                                           class="form-control mb-2"
+                                                           placeholder="Customer Name">
 
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Save</button>
+                                                    <label style="color: black">Gender :</label>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="gender" id="male"
+                                                               value="male">
+                                                        <label class="form-check-label" for="male" style="color: black">Male </label>
+
+                                                        <input class="form-check-input" type="radio"
+                                                               name="gender" id="female"
+                                                               value="female">
+                                                        <label class="form-check-label" for="female"
+                                                               style="color: black">Female </label>
+                                                        <input id="ID" name="ID" hidden>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">
+                                                            Cancel
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

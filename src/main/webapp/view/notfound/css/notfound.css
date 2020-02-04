@@ -11,7 +11,7 @@
     display: inline-block;
     line-height: 0.7;
     position: relative;
-    color: #FFB485;
+    color: #FFE05E;
 }
 .error-container > span > span {
     display: inline-block;
@@ -20,7 +20,7 @@
 .error-container > span:nth-of-type(1) {
     perspective: 1000px;
     perspective-origin: 500% 50%;
-    color: #D15C95;
+    color: #FFE05E;
 }
 .error-container > span:nth-of-type(1) > span {
     transform-origin: 50% 100% 0px;
@@ -31,7 +31,7 @@
 .error-container > span:nth-of-type(3) {
     perspective: none;
     perspective-origin: 50% 50%;
-    color: #D15C95;
+    color: #FFE05E;
 }
 .error-container > span:nth-of-type(3) > span {
     transform-origin: 100% 100% 0px;
@@ -100,12 +100,12 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #FFE05E;
+    background-color: #ffffff;
     margin-bottom: 50px;
 }
 html, button, input, select, textarea {
     font-family: 'Montserrat', Helvetica, sans-serif;
-    color: #D15C95;
+    color: #000000;
 }
 h1 {
     text-align: center;
@@ -123,10 +123,10 @@ h1 {
 a.more-link {
     text-transform: uppercase;
     font-size: 13px;
-    background-color: white;
+    background-color: black;
     padding: 10px 15px;
     border-radius: 0;
-    color: black;
+    color: white;
     display: inline-block;
     margin-right: 5px;
     margin-bottom: 5px;

@@ -5,9 +5,7 @@ import ir.maktab.java32.projects.servlet.onlinebusticket.features.shared.enumera
 import ir.maktab.java32.projects.servlet.onlinebusticket.features.shared.model.PersistenceEntity;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @Setter
@@ -23,6 +21,7 @@ public class Customer extends PersistenceEntity<Long> {
     private String customerName;
 
     @Column(name = "GENDER")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     @ManyToOne
