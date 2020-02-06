@@ -29,6 +29,6 @@ public class Customer extends PersistenceEntity<Long> {
     @ManyToOne
     private User user;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Ticket> ticketList = new ArrayList<>();
 }

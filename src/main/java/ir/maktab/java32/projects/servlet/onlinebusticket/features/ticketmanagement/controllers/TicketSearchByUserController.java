@@ -25,14 +25,10 @@ public class TicketSearchByUserController extends HttpServlet {
             String origin = req.getParameter("origin");
             String destination = req.getParameter("destination");
             String departureDate = req.getParameter("departure-date");
-            String[] date = departureDate.split("-");
-            int year = Integer.parseInt(date[0]);
-            int month = Integer.parseInt(date[1]);
-            int day = Integer.parseInt(date[2]);
 
             TicketSearchDto ticketSearchDto = new TicketSearchDto(origin
                     , destination,
-                    new Date(year - 1900, month - 1, day));
+                    departureDate);
 
             List<Ticket> ticketList = new TicketSearchByUserUseCaseImpl().getTicketList(ticketSearchDto);
             ticketList.sort(Comparator.comparing(Ticket::getDepartureTime));

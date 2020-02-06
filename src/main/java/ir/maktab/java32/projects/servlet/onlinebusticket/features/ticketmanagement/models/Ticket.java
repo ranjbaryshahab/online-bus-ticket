@@ -32,6 +32,6 @@ public class Ticket extends PersistenceEntity<Long> {
     @Column(name = "TRAVEL_ID")
     private String travelId;
 
-    @ManyToMany(mappedBy = "ticketList", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "ticketList")
     private List<Customer> customerList = new ArrayList<>();
 }

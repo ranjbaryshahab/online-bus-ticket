@@ -15,7 +15,7 @@ public class TicketSearchDto implements Serializable {
 
     private String destination;
 
-    private Date departureDate;
+    private String departureDate;
 }
 
 
